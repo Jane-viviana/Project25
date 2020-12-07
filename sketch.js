@@ -12,7 +12,7 @@ var dustbinImage;
 
 function preload(){
   //paperImage=loadImage("paper.png");
-  // dustbinImage=loadImage("dustbingreen.png");
+   dustbinImage=loadImage("dustbingreen.png");
 }
 
 function setup() {
@@ -26,7 +26,7 @@ function setup() {
 	dustbin2 = new Dustbin(705,410,20,100);
 	dustbin3 = new Dustbin(595,410,20,100);
   ground = new Ground(width/2,height-35,800,15);
-  paper = new Paper(270,430,15,15);
+  paper = new Paper(270,455,30,30);
 	Engine.run(engine);
   
 }
@@ -35,8 +35,9 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   Engine.update(engine);
-  background(0);
-  //keyPressed();
+  background(250);
+  //keyPressed()
+
   dustbin.display();
   dustbin2.display();
   dustbin3.display();
@@ -46,7 +47,7 @@ function draw() {
 }
  function keyPressed(){
 	 if(keyCode === UP_ARROW){
-		 Matter.Body.applyForce(paper.body,paper.body.position,{x:25,y:-25});
+		 Matter.Body.applyForce(paper.body,paper.body.position,{x:95,y:-95});
 	 }
  }
 

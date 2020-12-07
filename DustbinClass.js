@@ -1,6 +1,5 @@
 class Dustbin {
   constructor(x,y,width,height){
-
       var options={
           //'friction': 1.0,
           // 'density': 1
@@ -9,6 +8,7 @@ class Dustbin {
       this.body = Bodies.rectangle(x,y,width,height,options);
       this.width = width;
       this.height = height;
+      this.image=loadImage("dustbingreen.png");
       World.add(world,this.body);
       //this.image=loadImage("dustbingreen.png");
   }
@@ -17,12 +17,14 @@ class Dustbin {
     //var angle = this.body.angle;
     rectMode(CENTER);
     push();
-     translate(pos.x,pos.y); 
-     //angleMode(RADIANS);
+    translate(pos.x,pos.y); 
+    //angleMode(RADIANS);
     //rotate(angle);
     fill("white");
     stroke("green");
     rect(0,0, this.width, this.height);
+    imageMode(CENTER);
+    image(this.image,0,0,this.width,this.height);
     pop();
   }
 }
